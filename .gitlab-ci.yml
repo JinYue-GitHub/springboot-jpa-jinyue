@@ -1,0 +1,18 @@
+# 定义 stages
+stages:
+  - deploy
+# 定义 job
+job:
+  stage: deploy
+  script:
+    - sudo cp -R * /usr/local/party-9095/partybuild
+    - cd /usr/local/party-9095/partybuild/
+    - mvn clean install
+    - cp /home/gitlab-runner/.m2/repository/git/igongdi/cn/party/1.0/party-1.0.jar /usr/local/party-9095/
+    - cd /usr/local/party-9095/
+    - sleep 1m
+    - sh stop.sh
+    - sleep 10s
+    - sh start.sh
+  tags:
+     - party

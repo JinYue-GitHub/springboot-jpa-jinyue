@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript" src="../public/js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#myDiv").click(function(){
+            $.ajax({
+					type:"POST",
+					url: "http://10.5.95.60:9095/userUpate",
+					contentType: "application/json; charset=utf-8",
+					dataType:"json",
+					data:'{"uid":544,"username":null,"phoneNumber":"15846107696","name":null,"password":"jinyue6","salt":null,"state":0,"superAdministrator":0,"age":0,"sex":null,"birthday":null,"organization":{"id":462,"name":"无","parentId":0,"parentIds":null,"ids":"无","subOrganization":null,"personId":null,"userInfoList":null,"permissions":[]},"partyOrganization":{"id":461,"name":"无","parentId":0,"parentIds":null,"ids":null,"production":null,"subPartyOrganization":null,"personId":null,"userInfoList":null},"post":null,"fipost":null,"pipost":null,"political":null,"qualification":null,"universities":null,"homeAddress":null,"roleList":[{"id":481,"role":"无","description":null,"available":1,"permissions":[]}],"credentialsSalt":"nullnull"}',
+					success:function(data){
+						alert(data);
+					}
+				});
+			
+            
+         });
+    });
+</script>    
+</head>
+    <body>
+<!--     	<div id="title"><h2>状态</h2></div> -->
+<!--         <div id="myDiv"><h2>权限资源添加</h2></div> -->
+        <button id="myDiv" type="button">添加</button>
+    </body>
+</html>

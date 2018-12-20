@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript" src="../public/js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#testAjax").click(function(){
+            $.ajax({
+               type: "POST",
+               url: "test.php",
+               data: "name=garfield&age=18",
+               success: function(data){
+                        $("#myDiv").html('<h2>'+data+'</h2>');
+                  }
+            });
+            
+         });
+    });
+</script>    
+</head>
+    <body>
+    	<div id="title"><h2>状态</h2></div>
+        <div id="myDiv"><h2>权限资源添加</h2></div>
+        <button id="add" type="button">添加</button>
+    </body>
+</html>
